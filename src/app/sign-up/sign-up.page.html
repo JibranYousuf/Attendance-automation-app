@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid class="page-wrapper register-container" style="height: calc(100vh - 56px);">
+    <ion-grid class="register-wrapper" style="min-width: 100%">
+      <form>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <!-- <p style="font-size:13px; color:#FFA500"
+                *ngIf="registerForm.get('username').errors && registerForm.get('username').errors.usernameTaken">
+                This username is already taken!
+              </p> -->
+              <ion-item class="register-input-wrapper">
+                <ion-icon name="person"></ion-icon>
+                <ion-input style="--placeholder-color: #000 !important" placeholder="Full Name">
+                </ion-input>
+              </ion-item>
+              <ion-item class="register-input-wrapper">
+                <ion-icon name="mail"></ion-icon>
+                <ion-input style="--placeholder-color: #000 !important" placeholder="Email">
+                </ion-input>
+              </ion-item>
+              <!-- <p style="font-size:13px; color:#FFA500"
+                *ngIf="registerForm.get('email').errors && registerForm.get('email').errors.emailTaken">
+                This email is already associated with an account!
+              </p> -->
+              <ion-item class="register-input-wrapper">
+                <ion-icon name="key"></ion-icon>
+                <ion-input style="--placeholder-color: #000 !important" type="password" placeholder="Password"></ion-input>
+              </ion-item>
+              <!-- <p *ngIf="registerForm.get('password').errors && registerForm.get('password').errors.passwordInvalid"
+                style="font-size:13px; color:#FFA500">Password must contain letters & numbers, and must be 8
+                characters long</p> -->
+              <ion-item class="register-input-wrapper">
+                <ion-icon name="key"></ion-icon>
+                <ion-input style="--placeholder-color: #000 !important" type="password" placeholder="Confirm Password"></ion-input>
+              </ion-item>
+              <!-- <p style="font-size:13px; color:#FFA500"
+                *ngIf="registerForm.get('confirmPassword').errors && registerForm.get('confirmPassword').errors.confirmPasswordNotSame">
+                Confirm Password does not match!
+              </p> -->
+              <ion-grid class="login-redirect">
+                <ion-row>
+                  <ion-col class="d-flex justify-content-center">
+                    <ion-button size="large" type="submit">Sign Up</ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <!-- <ion-button size="large" type="submit" [disabled]="registerForm.invalid" expand="block">
+                <div *ngIf="isLoading === true" class="lds-ring">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+                Register
+              </ion-button> -->
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </ion-grid>
+    <ion-grid class="create-acc" [routerLink]="['/sign-in']">
+      <ion-row>
+        <ion-col>
+          <p>Already a member? <span>sign in</span></p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-grid>
+</ion-content>

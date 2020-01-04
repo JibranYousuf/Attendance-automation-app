@@ -1,0 +1,30 @@
+.login-container .main-head-wrapper {
+    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+  }
+  .login-container .main-head-wrapper h1 {
+      font-size: 35px;
+  }
+  .login-container .login-wrapper {
+    flex-basis: 50%;
+  }
+  .login-container .create-acc {
+    flex-basis: 10%;
+  }
+  .create-acc p {
+    font-family: 'Muli', sans-serif;
+    font-weight: 600;
+    color: #4d4f56;
+  }
+  .create-acc p span {
+    color: #5d78ff;
+  }
+  .login-container .login-as-editor label{
+    color: #4d4f56;
+    margin-top: 2px;
+    text-transform: capitalize;
+  }
+  .forgot-pass-link {
+   text-decoration: underline;
+  }

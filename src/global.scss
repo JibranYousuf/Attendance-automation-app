@@ -1,0 +1,402 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Muli:200,300,400,500,600,700,800&display=swap');
+
+body {
+    font-family: 'Muli', sans-serif;
+}
+ion-button {
+    font-family: 'Muli', sans-serif;
+    // width: 290px;
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Muli', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #5d78ff;
+    --background: #fff;
+    --background-hover: #fff;
+    --background-activated: #fff;
+    --color-activated: #5d78ff;
+    cursor: pointer;
+    --border-radius: 5px;
+  }
+  
+  ion-item {
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
+  }
+  
+  ion-input {
+    --placeholder-color: #000 !important;
+    --placeholder-font-weight: 600 !important;
+  }
+  ion-title {
+    color: #5d78ff;
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+  ion-card {
+    box-shadow: none !important;
+  }
+  ion-card-header {
+    padding: 10px !important;
+  }
+  ion-card-content {
+    padding: 10px !important;
+  }
+  ion-header {
+    text-align: center;
+  }
+  ion-badge {
+    --box-shadow: rgba(0, 0, 0, 0.16);
+  }
+  ion-avatar img{
+    object-fit: contain;
+  }
+  ion-fab  {
+    bottom: 15px;
+  }
+  ion-searchbar.basic-ion-searchbar {
+    --background: #fff;
+    padding: 0;
+    height: 35px;
+  }
+  ion-searchbar.sc-ion-searchbar-md-h {
+    --icon-color: #5d78ff;
+    --clear-button-color: #5d78ff;
+    --cancel-button-color	: #5d78ff;
+  }
+  ion-select .select-icon .select-icon-inner {
+    opacity: 0.8 !important;
+  }
+  ion-select {
+    padding-left: 0;
+    color: rgba(0,0,0,0.6);
+    font-size: 13px;
+    font-family: 'Muli', sans-serif;
+  }
+  ion-segment-button {
+    font-size: 11px;
+    font-family: 'Muli', sans-serif;
+    --indicator-color-checked: transparent;
+    --background-activated: transparent;
+    --background-checked: transparent;
+    --background-hover: transparent;
+  }
+  .centered-when-btn {
+    margin-right: 48px;
+  }
+  .segment-button-indicator {
+    display: none !important;
+  }
+  strong {
+    font-weight: 800 !important;
+  }
+  
+  .ui-loading{
+  
+  }
+  // .empty-competitions::after {
+  //     content: "No Competitions here";
+  //     margin-top: 15px;
+  //     color: lightgray;
+  //     width: 100%;
+  //     height: 100%;
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  // }  
+  html body a,
+  html body a:hover,
+  html body a:active {
+    color: #4d4f56;
+  }
+  .text-center {
+    text-align: center !important;
+  }
+  .ion-activatable {
+    position: relative;
+    overflow: hidden;
+  }
+  .mt-06 {
+    margin-top: 6px;
+  }
+  .ml-1 {
+    margin-left: 5px !important;
+  }
+  .mt-1 {
+    margin-top: 10px;
+  }
+  .mt-2 {
+    margin-top: 20px;
+  }
+  .mr-1 {
+    margin-right: 10px;
+  }
+  .mr-2 {
+    margin-right: 20px;
+  }
+  .close-sm {
+    width: 15px !important;
+  }
+  .bg-white {
+    color: #5d78ff !important;
+    background-color: #fff !important;
+  }
+  .bg-green {
+    background: #7AFC32;
+    color:white;
+  }
+  .bg-red {
+    background: #E62E2D;
+    color:white
+  }
+  .text-right {
+    text-align: right !important;
+  }
+  .text-left {
+    text-align: left !important;
+  }
+  .bg-orange {
+    background: #5d78ff !important;
+    color: #fff !important;
+  }
+  .badge {
+    font-weight: 300;
+    border-radius: 5px;
+    padding: 5px 8px;
+  }
+  .badge-purple {
+    background: #5d78ff;
+    color: white;
+  }
+  .badge-yellow {
+    background: #F9EA1C;
+    text-transform: uppercase;
+    color: #000;
+  }
+  .btn {
+    text-transform: capitalize;
+  }
+  .btn-purple,
+  .btn-purple:active,
+  .btn-purple:focus,
+  .btn-purple:visited {
+    --background: #5d78ff;
+    color: #fff;
+  }
+  .profile-img {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #f6f6f6;
+  }
+  .picture-empty {
+    background-image: url('./assets/photo-camera.svg');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
+  .profile-edit img {
+    width: 15px;
+  }
+  .profile-edit {
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: center;
+    background-color: orange;
+    border-radius: 50%;
+  }
+  .rounded-icon-btn.left {
+    left: 25px;
+  }
+  .rounded-icon-btn.right {
+    right: 25px;
+  } 
+  .rounded-icon-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    text-transform: uppercase;
+    padding: 10px;
+    position: absolute;
+    bottom: 25px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left:0;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.75) 8%, rgba(0, 0, 0, 0) 72%);
+  }
+  .btn-purple {
+    --background-hover: #5d78ff;
+    --background-activated: #5d78ff;
+    --color-activated: #fff;
+  }
+  .btn-transparent,
+  .btn-transparent:active,
+  .btn-transparent:focus,
+  .btn-transparent:visited {
+    --background: transparent !important;
+    --background-hover: transparent !important;
+    color: #9FA0A3 !important;
+    --ion-color-primary-contrast: #9FA0A3;
+    --ion-color-primary-shade: transparent;
+  }
+  .btn-purple:focus,
+  .btn-purple:active,
+  .btn-purple:hover {
+    --background: #5d78ff;
+    color: #fff;
+  }
+  .d-flex {
+    display: flex;
+  }
+  .flex-direction-column {
+    flex-direction: column;
+  }
+  .align-items-center {
+    align-items: center;
+  }
+  .justify-content-center {
+    justify-content: center;
+  }
+  .justify-content-between {
+    justify-content: space-between;
+  }
+  .justify-content-evenly {
+    justify-content: space-evenly;
+  }
+  .border-top-0 {
+    border-top: 0 !important;
+  }
+  .mr-2 {
+    margin-right: 20px !important;
+  }
+  .p-0 {
+    padding: 0 !important;
+  }
+  .color-purple {
+    color: #5d78ff !important;
+  }
+  .ui-accordion .ui-accordion-header a {
+    padding: 5px;
+    font-size: 13px;
+    background-color: #fff;
+  }
+  .page-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .close-icon {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    z-index: 9;
+  }
+  // Login & Register
+  .login-container .main-head-wrapper,
+  .register-container .main-head-wrapper {
+    flex-basis: 30%;
+  }
+  .login-container .main-head-wrapper h1,
+  .register-container .main-head-wrapper h1 {
+    font-size: 50px;
+    font-weight: bolder;
+    color: #5d78ff;
+    font-family: 'Muli', sans-serif;
+  }
+  .login-btn,
+  .register-btn {
+    margin-top: 38px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    --background: #5d78ff;
+    color: #fff;
+    border-radius: 5px;
+  }
+  .register-input-wrapper {
+    box-shadow: none;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    height: 50px;
+  }
+  .login-input-wrapper ion-icon, 
+  .register-input-wrapper ion-icon {
+    margin-right: 12px;
+    color: #5d78ff;
+  }
+  .login-input-wrapper:not(:first-child),
+  .register-input-wrapper:not(:first-child) {
+    margin-top: 18px;
+  }
+  
+  // Detail List
+  .detail-list {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .detail-list-item-heading {
+    color: #919295;
+    font-family: 'Muli', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  .detail-list-item-heading::after {
+    content: "";
+    height: 0.8px;
+    background: #ddd;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .detail-list-item {
+    letter-spacing: 1px;
+    font-size: 14px;
+  }

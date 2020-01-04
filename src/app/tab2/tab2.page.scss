@@ -1,0 +1,40 @@
+
+
+.competition-detail-page {
+    flex-direction: row;
+    font-family: "CircularStd";
+    font-weight: 300;
+    height: calc(100vh - 56px);
+}
+.competition-detail-card ion-card-header {
+    display: flex;
+    justify-content: center;
+}
+.competition-detail-card ion-card-header img{
+    object-fit: contain;
+}
+.competition-detail-page .favourite-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.competition-detail-page .user-wrapper,
+.competition-detail-page .favourite-wrapper {
+    color: rgba(0,0,0,0.9);
+}
+.competition-detail-page .user-wrapper ion-text,
+.competition-detail-page .favourite-wrapper ion-text{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.competition-detail-page .user-wrapper ion-icon {
+    margin-right: 5px;
+    vertical-align: text-bottom;
+    font-size: 20px;
+}
+.competition-detail-page .favourite-wrapper img {
+    margin-left: 5px;
+}
+.competition-detail-page .btn-purple {
+    font-size: 18px;
+}

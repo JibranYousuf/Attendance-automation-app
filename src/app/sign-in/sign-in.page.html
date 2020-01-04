@@ -1,0 +1,37 @@
+<ion-content>
+  <ion-grid class="page-wrapper login-container" style="height: calc(100vh - 56px);">
+    <ion-grid class="main-head-wrapper">
+      <h1>Attendance App</h1>
+    </ion-grid>
+    <ion-grid class="login-wrapper">
+      <form>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item class="login-input-wrapper">
+                <ion-icon name="card"></ion-icon>
+                <ion-input class="login-email" name="username" type="text" placeholder="Student/Teacher ID">
+                </ion-input>
+              </ion-item>
+              <ion-item class="login-input-wrapper">
+                <ion-icon name="key"></ion-icon>
+                <ion-input class="login-password" name="password" type="password" placeholder="Password">
+                </ion-input>
+              </ion-item>
+              <ion-button class="login-btn" size="large" type="submit" expand="block">
+                Sign In
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </ion-grid>
+    <ion-grid class="create-acc" [routerLink]="['/sign-up']">
+      <ion-row>
+        <ion-col>
+          <p>Not a member yet? <span>Sign up</span></p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-grid>
+</ion-content>
