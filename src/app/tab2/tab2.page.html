@@ -7,13 +7,12 @@
 </ion-header>
 
 <ion-content>
-
   <ion-grid class="competition-detail-page">
     <ion-grid>
       <ion-card no-border class="competition-detail-card">
         <ion-card-header>
           <ion-avatar class="profile-img picture-empty">
-            <img src="../../assets/profile-avatar.png">
+            <img src="../../assets/profile-avatar.png" />
           </ion-avatar>
         </ion-card-header>
         <ion-card-content>
@@ -21,9 +20,8 @@
             <ion-row class="detail-list-item-wrapper">
               <ion-col size="12">
                 <ion-item class="login-input-wrapper">
-                  <ion-icon name="card"></ion-icon>
-                  <ion-text> iamhamza
-                  </ion-text>
+                  <ion-icon name="person"></ion-icon>
+                  <ion-text> iamteacher </ion-text>
                 </ion-item>
               </ion-col>
             </ion-row>
@@ -31,17 +29,7 @@
               <ion-col size="12">
                 <ion-item class="login-input-wrapper">
                   <ion-icon name="person"></ion-icon>
-                  <ion-text> Hamza
-                  </ion-text>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-            <ion-row class="detail-list-item-wrapper">
-              <ion-col size="12">
-                <ion-item class="login-input-wrapper">
-                  <ion-icon name="mail"></ion-icon>
-                  <ion-input class="login-email" name="email" type="email" placeholder="Email">
-                  </ion-input>
+                  <ion-text> teacher </ion-text>
                 </ion-item>
               </ion-col>
             </ion-row>
@@ -49,12 +37,9 @@
           <ion-grid>
             <ion-row>
               <ion-col>
-                <ion-button class="btn btn-purple">Save</ion-button>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                <ion-button class="btn btn-purple">Logout</ion-button>
+                <ion-button [routerLink]="['/sign-in']" class="btn btn-purple"
+                  >Logout</ion-button
+                >
               </ion-col>
             </ion-row>
           </ion-grid>

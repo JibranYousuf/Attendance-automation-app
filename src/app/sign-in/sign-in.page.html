@@ -1,5 +1,8 @@
 <ion-content>
-  <ion-grid class="page-wrapper login-container" style="height: calc(100vh - 56px);">
+  <ion-grid
+    class="page-wrapper login-container"
+    style="height: calc(100vh - 56px);"
+  >
     <ion-grid class="main-head-wrapper">
       <h1>Attendance App</h1>
     </ion-grid>
@@ -10,15 +13,33 @@
             <ion-col>
               <ion-item class="login-input-wrapper">
                 <ion-icon name="card"></ion-icon>
-                <ion-input class="login-email" name="username" type="text" placeholder="Student/Teacher ID">
+                <ion-input
+                  [(ngModel)]="username"
+                  class="login-email"
+                  name="username"
+                  type="text"
+                  placeholder="Student/Teacher ID"
+                >
                 </ion-input>
               </ion-item>
               <ion-item class="login-input-wrapper">
                 <ion-icon name="key"></ion-icon>
-                <ion-input class="login-password" name="password" type="password" placeholder="Password">
+                <ion-input
+                  [(ngModel)]="password"
+                  class="login-password"
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                >
                 </ion-input>
               </ion-item>
-              <ion-button class="login-btn" size="large" type="submit" expand="block">
+              <ion-button
+                class="login-btn"
+                size="large"
+                type="submit"
+                expand="block"
+                (click)="onSignIn()"
+              >
                 Sign In
               </ion-button>
             </ion-col>
