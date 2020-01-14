@@ -20,7 +20,11 @@ const routes: Routes = [
     path: "sign-in",
     loadChildren: () =>
       import("./sign-in/sign-in.module").then(m => m.SignInPageModule)
+  },  {
+    path: 'add-class',
+    loadChildren: () => import('./add-class/add-class.module').then( m => m.AddClassPageModule)
   }
+
 ];
 @NgModule({
   imports: [
