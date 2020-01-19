@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>student-list</ion-title>
+    <ion-title>students-list</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -8,16 +8,17 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid *ngIf="studentList == false" class="empty-item-message">
+    No Student Enrolled
+  </ion-grid>
   <ion-list *ngIf="studentList !== []" class="class-container" lines="none">
-    <ion-list-header>
-      <ion-label>Student List</ion-label>
-    </ion-list-header>
     <ion-item
       *ngFor="let student of studentList; let i = index"
       class="class-item ion-activatable"
     >
       <ion-icon slot="start" color="medium" name="person"></ion-icon>
       <ion-label>{{student.name}}</ion-label>
+      <ion-label>Roll No: {{student.rollno}}</ion-label>
     </ion-item>
   </ion-list>
   <div class="add-btn ion-activatable" (click)="presentModal()">

@@ -1,16 +1,13 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Home
+      Class-List
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list *ngIf="classList !== []" class="class-container" lines="none">
-    <ion-list-header>
-      <ion-label>Class List</ion-label>
-    </ion-list-header>
     <a
       [routerLink]="['/student-list', i]"
       *ngFor="let class of classList; let i = index"

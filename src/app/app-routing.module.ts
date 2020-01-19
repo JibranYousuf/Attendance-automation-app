@@ -39,7 +39,11 @@ const routes: Routes = [
       import("./student-list/student-list.module").then(
         m => m.StudentListPageModule
       )
+  },  {
+    path: 'attendance-list',
+    loadChildren: () => import('./attendance-list/attendance-list.module').then( m => m.AttendanceListPageModule)
   }
+
 ];
 @NgModule({
   imports: [

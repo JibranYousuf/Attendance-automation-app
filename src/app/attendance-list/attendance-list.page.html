@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>attendance-list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngIf="true == true" class="empty-item-message">
+    No Attendance List
+  </ion-grid>
+  <div class="add-btn ion-activatable" (click)="presentModal()">
+    <ion-icon name="calendar"></ion-icon>
+    <ion-ripple-effect></ion-ripple-effect>
+  </div>
+</ion-content>

@@ -8,7 +8,9 @@ import { Student } from "./add-class/student.model";
 })
 export class ClassService {
   constructor() {
-    this.classList = JSON.parse(localStorage.getItem("classList"));
+    if (localStorage.getItem("classList") !== null) {
+      this.classList = JSON.parse(localStorage.getItem("classList"));
+    }
   }
   private classList: Class[] = [];
   private classUpdated = new Subject<Class[]>();

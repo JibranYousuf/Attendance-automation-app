@@ -95,9 +95,6 @@ ion-searchbar.sc-ion-searchbar-md-h {
   --clear-button-color: #5d78ff;
   --cancel-button-color: #5d78ff;
 }
-ion-select .select-icon .select-icon-inner {
-  opacity: 0.8 !important;
-}
 ion-select {
   padding-left: 0;
   color: rgba(0, 0, 0, 1);
@@ -423,4 +420,14 @@ a {
 .detail-list-item {
   letter-spacing: 1px;
   font-size: 14px;
+}
+.empty-item-message {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
