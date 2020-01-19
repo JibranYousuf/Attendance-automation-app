@@ -1,0 +1,9 @@
+.class-item:not(:first-of-type) {
+  margin-top: 20px;
+}
+.modal-close {
+  position: absolute;
+  right: 10px;
+  bottom: 14px;
+  font-size: 26px;
+}

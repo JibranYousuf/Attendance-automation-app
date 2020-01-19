@@ -7,3 +7,13 @@
 .class-item:not(:first-of-type) {
   margin-top: 20px;
 }
+.create-btn-wrapper {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+}
+.add-class-container {
+  overflow: auto;
+  height: 78vh;
+  position: relative;
+}

@@ -100,7 +100,7 @@ ion-select .select-icon .select-icon-inner {
 }
 ion-select {
   padding-left: 0;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 1);
   font-size: 13px;
   font-family: "Muli", sans-serif;
 }
@@ -156,7 +156,10 @@ html body a:active {
   bottom: 20px;
   right: 20px;
 }
-
+.add-btn.absolute {
+  position: absolute !important;
+  bottom: initial;
+}
 .ion-activatable {
   position: relative;
   overflow: hidden;
@@ -217,6 +220,9 @@ html body a:active {
   background: #f9ea1c;
   text-transform: uppercase;
   color: #000;
+}
+a {
+  text-decoration: none !important;
 }
 .btn {
   text-transform: capitalize;

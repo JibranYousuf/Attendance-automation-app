@@ -7,25 +7,22 @@
 </ion-header>
 
 <ion-content>
-  <ion-list class="class-container" lines="none">
+  <ion-list *ngIf="classList !== []" class="class-container" lines="none">
     <ion-list-header>
       <ion-label>Class List</ion-label>
     </ion-list-header>
-    <ion-item class="class-item ion-activatable">
-      <ion-icon slot="start" color="medium" name="school"></ion-icon>
-      <ion-label>BSCS-II</ion-label>
-      <ion-ripple-effect></ion-ripple-effect>
-    </ion-item>
-    <ion-item class="class-item ion-activatable">
-      <ion-icon slot="start" color="medium" name="school"></ion-icon>
-      <ion-label>BSCS-II</ion-label>
-      <ion-ripple-effect></ion-ripple-effect>
-    </ion-item>
-    <ion-item class="class-item ion-activatable">
-      <ion-icon slot="start" color="medium" name="school"></ion-icon>
-      <ion-label>BSCS-II</ion-label>
-      <ion-ripple-effect></ion-ripple-effect>
-    </ion-item>
+    <a
+      [routerLink]="['/student-list', i]"
+      *ngFor="let class of classList; let i = index"
+    >
+      <ion-item class="class-item ion-activatable">
+        <ion-icon slot="start" color="medium" name="school"></ion-icon>
+        <ion-label
+          >{{class.name}}-{{class.year}} semester-{{class.semester}}</ion-label
+        >
+        <ion-ripple-effect></ion-ripple-effect>
+      </ion-item>
+    </a>
   </ion-list>
   <div class="add-btn ion-activatable" (click)="presentModal()">
     <ion-icon name="add"></ion-icon>
