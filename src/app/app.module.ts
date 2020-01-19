@@ -5,11 +5,13 @@ import { RouteReuseStrategy } from "@angular/router";
 import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
+import { BarcodeScanner } from "@ionic-native/barcode-scanner/ngx";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AddClassPageModule } from "./add-class/add-class.module";
 import { AddStudentPageModule } from "./add-student/add-student.module";
+import { TakeAttendancePageModule } from "./take-attendance/take-attendance.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,11 +21,13 @@ import { AddStudentPageModule } from "./add-student/add-student.module";
     IonicModule.forRoot(),
     AppRoutingModule,
     AddClassPageModule,
-    AddStudentPageModule
+    AddStudentPageModule,
+    TakeAttendancePageModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

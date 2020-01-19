@@ -5,11 +5,21 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid *ngIf="true == true" class="empty-item-message">
+  <ion-grid *ngIf="classList == false" class="empty-item-message">
     No Attendance List
   </ion-grid>
-  <div class="add-btn ion-activatable" (click)="presentModal()">
-    <ion-icon name="calendar"></ion-icon>
-    <ion-ripple-effect></ion-ripple-effect>
-  </div>
+  <ion-list *ngIf="classList !== []" class="class-container" lines="none">
+    <a
+      *ngFor="let class of classList; let i = index"
+      [routerLink]="['/take-attendance', i]"
+    >
+      <ion-item class="class-item ion-activatable">
+        <ion-icon slot="start" color="medium" name="qr-scanner"></ion-icon>
+        <ion-label
+          >{{class.name}}-{{class.year}} Semester-{{class.semester}}</ion-label
+        >
+        <ion-ripple-effect></ion-ripple-effect>
+      </ion-item>
+    </a>
+  </ion-list>
 </ion-content>

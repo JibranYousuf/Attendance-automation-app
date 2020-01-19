@@ -20,7 +20,7 @@ export class AddStudentPage implements OnInit {
     public classService: ClassService,
     public modalCtrl: ModalController,
     public toastController: ToastController,
-    navParams: NavParams
+    public navParams: NavParams
   ) {
     this.id = navParams.get("paramsId");
   }

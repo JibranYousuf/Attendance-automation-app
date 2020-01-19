@@ -1,5 +1,7 @@
 {
   "name": "attendance-automation-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

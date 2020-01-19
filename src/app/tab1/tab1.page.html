@@ -7,6 +7,9 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid *ngIf="classList == false" class="empty-item-message">
+    No Class added
+  </ion-grid>
   <ion-list *ngIf="classList !== []" class="class-container" lines="none">
     <a
       [routerLink]="['/student-list', i]"

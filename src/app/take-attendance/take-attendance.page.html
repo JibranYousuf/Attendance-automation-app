@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Take Attendance</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngIf="studentList == false" class="empty-item-message">
+    No Student Attended
+  </ion-grid>
+  <ion-list *ngIf="studentList !== []" class="class-container" lines="none">
+    <div *ngFor="let student of studentList; let i = index">
+      <ion-item
+        *ngIf="student.attendance === true"
+        class="class-item ion-activatable"
+      >
+        <ion-icon slot="start" color="medium" name="person"></ion-icon>
+        <ion-label>{{student.name}}</ion-label>
+        <ion-label>Roll No: {{student.rollno}}</ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+  <div class="add-btn ion-activatable" (click)="scanCode()">
+    <ion-icon name="qr-scanner"></ion-icon>
+  </div>
+</ion-content>

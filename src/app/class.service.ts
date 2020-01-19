@@ -26,6 +26,25 @@ export class ClassService {
     return this.classList[id].students;
   }
 
+  // getPresentStudent(id, student) {
+  //   const studentsList = this.classList[id].students;
+  //   return studentsList[
+  //     studentsList.findIndex(std => std.rollno === student.rollno)
+  //   ];
+  // }
+
+  markAttendance(id, student) {
+    this.classList[id].students[
+      this.classList[id].students.findIndex(std =>
+        std.rollno === student.rollno
+          ? (std.attendance = true)
+          : (std.attendance = false)
+      )
+    ];
+    localStorage.setItem("classList", JSON.stringify(this.classList));
+    this.classUpdated.next([...this.classList]);
+  }
+
   getClassUpdateListener() {
     return this.classUpdated.asObservable();
   }
