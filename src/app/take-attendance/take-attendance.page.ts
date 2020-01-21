@@ -42,7 +42,7 @@ export class TakeAttendancePage implements OnInit {
     this.barcodeScanner
       .scan()
       .then(barcodeData => {
-        this.classService.markAttendance(this.paramsId, barcodeData);
+        this.classService.markAttendance(this.paramsId, barcodeData.text);
       })
       .catch(err => {
         console.log("Error", err);
