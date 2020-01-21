@@ -25,7 +25,9 @@ export class StudentListPage implements OnInit {
     this.paramsId = this.route.snapshot.paramMap.get("id");
     this.studentList = this.classService.getStudentList(this.paramsId);
   }
-
+  deleteStudent(stdId) {
+    this.classService.deleteStudent(this.paramsId, stdId);
+  }
   async presentModal() {
     const modal = await this.modalController.create({
       component: AddStudentPage,

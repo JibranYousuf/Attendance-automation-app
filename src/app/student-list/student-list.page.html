@@ -11,16 +11,34 @@
   <ion-grid *ngIf="studentList == false" class="empty-item-message">
     No Student Enrolled
   </ion-grid>
-  <ion-list *ngIf="studentList !== []" class="class-container" lines="none">
-    <ion-item
-      *ngFor="let student of studentList; let i = index"
-      class="class-item ion-activatable"
-    >
-      <ion-icon slot="start" color="medium" name="person"></ion-icon>
-      <ion-label>{{student.name}}</ion-label>
-      <ion-label>Roll No: {{student.rollno}}</ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-grid *ngFor="let student of studentList; let i = index">
+    <ion-row>
+      <ion-col size="11">
+        <ion-list
+          *ngIf="studentList !== []"
+          class="class-container"
+          lines="none"
+        >
+          <ion-item class="class-item ion-activatable">
+            <ion-icon slot="start" color="medium" name="person"></ion-icon>
+            <ion-label>{{student.name}}</ion-label>
+            <ion-label>Roll No: {{student.rollno}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col
+        size="1"
+        class="d-flex align-items-center justify-content-center"
+      >
+        <ion-icon
+          class="delete-icon"
+          name="trash"
+          (click)="deleteStudent(i)"
+        ></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
   <div class="add-btn ion-activatable" (click)="presentModal()">
     <ion-icon name="add"></ion-icon>
   </div>

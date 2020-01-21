@@ -26,12 +26,18 @@ export class ClassService {
     return this.classList[id].students;
   }
 
-  // getPresentStudent(id, student) {
-  //   const studentsList = this.classList[id].students;
-  //   return studentsList[
-  //     studentsList.findIndex(std => std.rollno === student.rollno)
-  //   ];
-  // }
+  deleteClass(id) {
+    let classItem = Number(id);
+    this.classList.splice(classItem, 1);
+    localStorage.setItem("classList", JSON.stringify(this.classList));
+    this.classUpdated.next([...this.classList]);
+  }
+
+  deleteStudent(classId, studentId) {
+    this.classList[classId].students.splice(studentId, 1);
+    localStorage.setItem("classList", JSON.stringify(this.classList));
+    this.classUpdated.next([...this.classList]);
+  }
 
   markAttendance(id, student) {
     this.classList[id].students[

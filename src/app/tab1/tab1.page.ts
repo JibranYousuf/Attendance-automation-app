@@ -34,4 +34,9 @@ export class Tab1Page {
     });
     return await modal.present();
   }
+
+  deleteClass(id) {
+    console.log("clicked");
+    this.classService.deleteClass(id);
+  }
 }

@@ -33,9 +33,12 @@ export class TakeAttendancePage implements OnInit {
 
   ngOnInit() {
     this.studentList = this.classService.getStudentList(this.paramsId);
-    const date = new Date();
-    this.todayDate = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
-    console.log(this.todayDate);
+    // this.classService.markAttendance(this.paramsId, {
+    //   name: "Hamza",
+    //   rollno: "12354"
+    // });
+    // const date = new Date();
+    // this.todayDate = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
   }
 
   scanCode() {
