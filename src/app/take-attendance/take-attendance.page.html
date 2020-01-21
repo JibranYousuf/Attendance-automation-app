@@ -14,7 +14,7 @@
   <ion-list *ngIf="studentList !== []" class="class-container" lines="none">
     <div *ngFor="let student of studentList; let i = index">
       <ion-item
-        *ngIf="student.attendance === true"
+        *ngIf="student.attendance == true"
         class="class-item ion-activatable"
       >
         <ion-icon slot="start" color="medium" name="person"></ion-icon>
