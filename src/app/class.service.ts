@@ -57,16 +57,26 @@ export class ClassService {
   }
 
   markAttendance(id, rollno) {
-    this.classList[id].students[
-      this.classList[id].students.findIndex(std =>
-        std.rollno === rollno
-          ? ((std.attendance = true),
-            this.showToast("attendance marked successfuly"))
-          : ((std.attendance = false), this.showToast("Student not found"))
-      )
-    ];
-    localStorage.setItem("classList", JSON.stringify(this.classList));
-    this.classUpdated.next([...this.classList]);
+    // this.classList[id].students[
+    //   this.classList[id].students.findIndex(std =>
+    //     std.rollno === rollno
+    //       ? ((std.attendance = true),
+    //         this.showToast("attendance marked successfuly"))
+    //       : ((std.attendance = false), this.showToast("Student not found"))
+    //   )
+    // ];
+    let students = this.classList[id].students;
+    let presentStudentIndex = students.findIndex(std => std.rollno === rollno);
+
+    if (presentStudentIndex == -1) {
+      this.showToast("Student not found");
+      return;
+    } else {
+      students[presentStudentIndex].attendance = true;
+      this.showToast("Attendance marked successfully");
+      localStorage.setItem("classList", JSON.stringify(this.classList));
+      this.classUpdated.next([...this.classList]);
+    }
   }
 
   getClassUpdateListener() {
