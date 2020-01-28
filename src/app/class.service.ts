@@ -10,11 +10,12 @@ import { ToastController } from "@ionic/angular";
 export class ClassService {
   constructor(public toastController: ToastController) {
     if (localStorage.getItem("classList") !== null) {
-      this.classList = JSON.parse(localStorage.getItem("classList"));
+      this.classList = JSON.parse(localStorage.getItem("classList")) || {};
     }
   }
-  private classList: Class[] = [];
-  private classUpdated = new Subject<Class[]>();
+
+  private classList: Record<string, Class[]> = {};
+  private classUpdated = new Subject<Record<string, Class[]>>();
 
   showToast(msg) {
     this.toastController
@@ -32,31 +33,36 @@ export class ClassService {
       });
   }
 
-  getClassList() {
-    return [...this.classList];
+  getClassList(date): Class[] {
+    return this.classList[date] || [];
   }
 
-  getStudentList(id) {
-    if (this.classList === []) {
+  getStudentList(date, id): Student[] {
+    if (this.classList[date]) {
+      return this.classList[date][id].students;
+    }
+  }
+
+  deleteClass(date, id) {
+    if (!this.classList[date]) {
       return;
     }
-    return this.classList[id].students;
-  }
-
-  deleteClass(id) {
     let classItem = Number(id);
-    this.classList.splice(classItem, 1);
+    this.classList[date].splice(classItem, 1);
     localStorage.setItem("classList", JSON.stringify(this.classList));
-    this.classUpdated.next([...this.classList]);
+    this.classUpdated.next(this.classList);
   }
 
-  deleteStudent(classId, studentId) {
-    this.classList[classId].students.splice(studentId, 1);
+  deleteStudent(date, classId, studentId) {
+    if (!this.classList[date]) {
+      return;
+    }
+    this.classList[date][classId].students.splice(studentId, 1);
     localStorage.setItem("classList", JSON.stringify(this.classList));
-    this.classUpdated.next([...this.classList]);
+    this.classUpdated.next(this.classList);
   }
 
-  markAttendance(id, rollno) {
+  markAttendance(date, id, rollno) {
     // this.classList[id].students[
     //   this.classList[id].students.findIndex(std =>
     //     std.rollno === rollno
@@ -65,7 +71,10 @@ export class ClassService {
     //       : ((std.attendance = false), this.showToast("Student not found"))
     //   )
     // ];
-    let students = this.classList[id].students;
+    if (!this.classList[date]) {
+      return;
+    }
+    let students = this.classList[date][id].students;
     let presentStudentIndex = students.findIndex(std => std.rollno === rollno);
 
     if (presentStudentIndex == -1) {
@@ -75,7 +84,7 @@ export class ClassService {
       students[presentStudentIndex].attendance = true;
       this.showToast("Attendance marked successfully");
       localStorage.setItem("classList", JSON.stringify(this.classList));
-      this.classUpdated.next([...this.classList]);
+      this.classUpdated.next(this.classList);
     }
   }
 
@@ -83,15 +92,15 @@ export class ClassService {
     return this.classUpdated.asObservable();
   }
 
-  addClass(StudentClass: Class) {
-    this.classList.push(StudentClass);
+  addClass(date, StudentClass: Class) {
+    this.classList[date] = [StudentClass];
     localStorage.setItem("classList", JSON.stringify(this.classList));
-    this.classUpdated.next([...this.classList]);
+    this.classUpdated.next(this.classList);
   }
 
-  addStudent(paramId: string, student: Student) {
-    this.classList[paramId].students.push(student);
+  addStudent(date, paramId: string, student: Student) {
+    this.classList[date][paramId].students.push(student);
     localStorage.setItem("classList", JSON.stringify(this.classList));
-    this.classUpdated.next([...this.classList]);
+    this.classUpdated.next(this.classList);
   }
 }

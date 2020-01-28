@@ -29,10 +29,11 @@ export class TakeAttendancePage implements OnInit {
     private route: ActivatedRoute
   ) {
     this.paramsId = this.route.snapshot.paramMap.get("id");
+    this.todayDate = this.route.snapshot.paramMap.get("date");
   }
 
   ngOnInit() {
-    this.studentList = this.classService.getStudentList(this.paramsId);
+    this.studentList = this.classService.getStudentList(this.todayDate, this.paramsId);
     // this.classService.markAttendance(this.paramsId, "12345");
     // const date = new Date();
     // this.todayDate = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
@@ -42,7 +43,7 @@ export class TakeAttendancePage implements OnInit {
     this.barcodeScanner
       .scan()
       .then(barcodeData => {
-        this.classService.markAttendance(this.paramsId, barcodeData.text);
+        this.classService.markAttendance(this.todayDate, this.paramsId, barcodeData.text);
       })
       .catch(err => {
         console.log("Error", err);

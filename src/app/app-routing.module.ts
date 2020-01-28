@@ -22,33 +22,33 @@ const routes: Routes = [
       import("./sign-in/sign-in.module").then(m => m.SignInPageModule)
   },
   {
-    path: "add-class",
+    path: "add-class/",
     loadChildren: () =>
       import("./add-class/add-class.module").then(m => m.AddClassPageModule)
   },
   {
-    path: "add-student",
+    path: "add-student/:date",
     loadChildren: () =>
       import("./add-student/add-student.module").then(
         m => m.AddStudentPageModule
       )
   },
   {
-    path: "student-list/:id",
+    path: "student-list/:id/:date",
     loadChildren: () =>
       import("./student-list/student-list.module").then(
         m => m.StudentListPageModule
       )
   },
   {
-    path: "attendance-list",
+    path: "attendance-list/:date",
     loadChildren: () =>
       import("./attendance-list/attendance-list.module").then(
         m => m.AttendanceListPageModule
       )
   },
   {
-    path: "take-attendance/:id",
+    path: "take-attendance/:id/:date",
     loadChildren: () =>
       import("./take-attendance/take-attendance.module").then(
         m => m.TakeAttendancePageModule

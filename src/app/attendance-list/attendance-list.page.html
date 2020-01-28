@@ -9,15 +9,10 @@
     No Attendance List
   </ion-grid>
   <ion-list *ngIf="classList !== []" class="class-container" lines="none">
-    <a
-      *ngFor="let class of classList; let i = index"
-      [routerLink]="['/take-attendance', i]"
-    >
+    <a *ngFor="let class of classList; let i = index" [routerLink]="['/take-attendance', i, selectedDate]">
       <ion-item class="class-item ion-activatable">
         <ion-icon slot="start" color="medium" name="qr-scanner"></ion-icon>
-        <ion-label
-          >{{class.name}}-{{class.year}} Semester-{{class.semester}}</ion-label
-        >
+        <ion-label>{{class.name}}-{{class.year}} Semester-{{class.semester}}</ion-label>
         <ion-ripple-effect></ion-ripple-effect>
       </ion-item>
     </a>

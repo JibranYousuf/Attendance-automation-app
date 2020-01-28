@@ -14,20 +14,24 @@ import { ActivatedRoute } from "@angular/router";
 export class AttendanceListPage implements OnInit {
   classList: Array<Class>;
   classListSub: Subscription;
+  selectedDate = this.getPadded(new Date().getMonth() + 1) + "/" + this.getPadded(new Date().getDate()) + "/" + new Date().getFullYear();
   // paramsId;
 
   constructor(
     public modalController: ModalController,
     public classService: ClassService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
+  getPadded(num) {
+    return ("00" + num).substr(-2, 2);
+  }
 
   ngOnInit() {
-    this.classList = this.classService.getClassList();
+    this.classList = this.classService.getClassList(this.selectedDate);
     this.classListSub = this.classService
       .getClassUpdateListener()
-      .subscribe((classList: Class[]) => {
-        this.classList = classList;
+      .subscribe((classList: Record<string, Class[]>) => {
+        this.classList = classList[this.selectedDate];
       });
   }
   // async presentModal() {

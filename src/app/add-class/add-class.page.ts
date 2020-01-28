@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { ModalController } from "@ionic/angular";
 import { Student } from "./student.model";
 import { Class } from "./class.model";
@@ -12,6 +12,7 @@ import { ToastController } from "@ionic/angular";
   styleUrls: ["./add-class.page.scss"]
 })
 export class AddClassPage implements OnInit {
+  @Input() date:string;
   classListSub: Subscription;
   classList: Array<Class> = [];
   class: Class = {
@@ -27,11 +28,11 @@ export class AddClassPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.classList = this.classService.getClassList();
+    this.classList = this.classService.getClassList(this.date);
     this.classListSub = this.classService
       .getClassUpdateListener()
-      .subscribe((classList: Class[]) => {
-        this.classList = classList;
+      .subscribe((classList: Record<string,Class[]>) => {
+        this.classList = classList[this.date];
       });
   }
 
@@ -66,7 +67,7 @@ export class AddClassPage implements OnInit {
       this.showToast("Enter all fields");
       return;
     }
-    this.classService.addClass(this.class);
+    this.classService.addClass(this.date,this.class);
     this.dismiss();
   }
   ngOnDestroy() {

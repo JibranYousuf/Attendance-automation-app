@@ -15,25 +15,28 @@ export class StudentListPage implements OnInit {
   classList;
   studentList;
   paramsId;
+  date;
   constructor(
     private route: ActivatedRoute,
     private classService: ClassService,
     public modalController: ModalController
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.paramsId = this.route.snapshot.paramMap.get("id");
-    this.studentList = this.classService.getStudentList(this.paramsId);
+    this.date = this.route.snapshot.paramMap.get("date");
+    this.studentList = this.classService.getStudentList(this.date, this.paramsId);
   }
   deleteStudent(stdId) {
-    this.classService.deleteStudent(this.paramsId, stdId);
+    this.classService.deleteStudent(this.date, this.paramsId, stdId);
   }
   async presentModal() {
     const modal = await this.modalController.create({
       component: AddStudentPage,
       backdropDismiss: true,
       componentProps: {
-        paramsId: this.paramsId
+        paramsId: this.paramsId,
+        date: this.date,
       }
     });
     return await modal.present();

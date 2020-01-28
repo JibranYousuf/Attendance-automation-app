@@ -16,6 +16,7 @@ export class AddStudentPage implements OnInit {
     attendance: false
   };
   id;
+  date;
   constructor(
     public classService: ClassService,
     public modalCtrl: ModalController,
@@ -23,9 +24,10 @@ export class AddStudentPage implements OnInit {
     public navParams: NavParams
   ) {
     this.id = navParams.get("paramsId");
+    this.date = navParams.get("date");
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
   showToast(msg) {
     this.toastController
       .create({
@@ -54,7 +56,7 @@ export class AddStudentPage implements OnInit {
       this.showToast("Enter all fields");
       return;
     }
-    this.classService.addStudent(this.id, this.student);
+    this.classService.addStudent(this.date, this.id, this.student);
     this.dismiss();
   }
 }
