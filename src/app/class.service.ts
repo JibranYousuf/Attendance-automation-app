@@ -33,16 +33,30 @@ export class ClassService {
       });
   }
 
+  /**
+   * gets class data
+   * @param date 
+   */
   getClassList(date): Class[] {
     return this.classList[date] || [];
   }
 
+  /**
+   * get students data
+   * @param date - date from filter
+   * @param id - student id
+   */
   getStudentList(date, id): Student[] {
     if (this.classList[date]) {
       return this.classList[date][id].students;
     }
   }
 
+  /**
+   * get data by class Id
+   * @param date date by filter
+   * @param id 
+   */
   deleteClass(date, id) {
     if (!this.classList[date]) {
       return;
@@ -53,6 +67,12 @@ export class ClassService {
     this.classUpdated.next(this.classList);
   }
 
+  /**
+   * delete student by class and student id
+   * @param date date by filter
+   * @param classId 
+   * @param studentId 
+   */
   deleteStudent(date, classId, studentId) {
     if (!this.classList[date]) {
       return;

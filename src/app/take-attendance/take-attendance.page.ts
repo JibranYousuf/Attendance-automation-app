@@ -40,9 +40,11 @@ export class TakeAttendancePage implements OnInit {
   }
 
   scanCode() {
+    // intiate barcode scanner
     this.barcodeScanner
       .scan()
       .then(barcodeData => {
+        //recieve barcode data
         this.classService.markAttendance(this.todayDate, this.paramsId, barcodeData.text);
       })
       .catch(err => {
