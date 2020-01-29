@@ -40,11 +40,11 @@ ion-button {
   font-family: "Muli", sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #5d78ff;
+  color: #689F38;
   --background: #fff;
   --background-hover: #fff;
   --background-activated: #fff;
-  --color-activated: #5d78ff;
+  --color-activated: #689F38;
   cursor: pointer;
   --border-radius: 5px;
 }
@@ -59,7 +59,7 @@ ion-input {
   --placeholder-font-weight: 600 !important;
 }
 ion-title {
-  color: #5d78ff;
+  color: #689F38;
   font-family: "Muli", sans-serif;
   font-size: 18px;
   text-transform: capitalize;
@@ -91,9 +91,9 @@ ion-searchbar.basic-ion-searchbar {
   height: 35px;
 }
 ion-searchbar.sc-ion-searchbar-md-h {
-  --icon-color: #5d78ff;
-  --clear-button-color: #5d78ff;
-  --cancel-button-color: #5d78ff;
+  --icon-color: #689F38;
+  --clear-button-color: #689F38;
+  --cancel-button-color: #689F38;
 }
 ion-select {
   padding-left: 0;
@@ -146,7 +146,7 @@ html body a:active {
   align-items: center;
   width: 50px;
   height: 50px;
-  background: #5d78ff;
+  background: #689F38;
   color: #fff;
   font-size: 30px;
   position: fixed !important;
@@ -183,7 +183,7 @@ html body a:active {
   width: 15px !important;
 }
 .bg-white {
-  color: #5d78ff !important;
+  color: #689F38 !important;
   background-color: #fff !important;
 }
 .bg-green {
@@ -201,7 +201,7 @@ html body a:active {
   text-align: left !important;
 }
 .bg-orange {
-  background: #5d78ff !important;
+  background: #689F38 !important;
   color: #fff !important;
 }
 .badge {
@@ -210,7 +210,7 @@ html body a:active {
   padding: 5px 8px;
 }
 .badge-purple {
-  background: #5d78ff;
+  background: #689F38;
   color: white;
 }
 .badge-yellow {
@@ -228,7 +228,7 @@ a {
 .btn-purple:active,
 .btn-purple:focus,
 .btn-purple:visited {
-  --background: #5d78ff;
+  --background: #689F38;
   color: #fff;
 }
 .profile-img {
@@ -292,8 +292,8 @@ a {
   );
 }
 .btn-purple {
-  --background-hover: #5d78ff;
-  --background-activated: #5d78ff;
+  --background-hover: #689F38;
+  --background-activated: #689F38;
   --color-activated: #fff;
 }
 .btn-transparent,
@@ -309,7 +309,7 @@ a {
 .btn-purple:focus,
 .btn-purple:active,
 .btn-purple:hover {
-  --background: #5d78ff;
+  --background: #689F38;
   color: #fff;
 }
 .d-flex {
@@ -340,7 +340,7 @@ a {
   padding: 0 !important;
 }
 .color-purple {
-  color: #5d78ff !important;
+  color: #689F38 !important;
 }
 .ui-accordion .ui-accordion-header a {
   padding: 5px;
@@ -368,14 +368,14 @@ a {
 .register-container .main-head-wrapper h1 {
   font-size: 50px;
   font-weight: bolder;
-  color: #5d78ff;
+  color: #689F38;
   font-family: "Muli", sans-serif;
 }
 .login-btn,
 .register-btn {
   margin-top: 38px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-  --background: #5d78ff;
+  --background: #689F38;
   color: #fff;
   border-radius: 5px;
 }
@@ -388,7 +388,7 @@ a {
 .login-input-wrapper ion-icon,
 .register-input-wrapper ion-icon {
   margin-right: 12px;
-  color: #5d78ff;
+  color: #689F38;
 }
 .login-input-wrapper:not(:first-child),
 .register-input-wrapper:not(:first-child) {
